@@ -71,6 +71,10 @@ main {
     font-size: 0.9em;
 }
 
+section {
+    margin: 20px 0;
+}
+
 footer {
     background: #35424a;
     color: #ffffff;
