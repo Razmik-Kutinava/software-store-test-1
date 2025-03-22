@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Управление безопасностью - Интернет-магазин программного обеспечения</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/scripts.js" defer></script>
 </head>
 <body>
     <header>
@@ -25,21 +26,63 @@
                 <div class="product">
                     <h3>Log360</h3>
                     <p>Описание продукта Log360.</p>
-                    <p>Параметры лицензирования: 1 год, 3 года, 5 лет.</p>
+                    <label for="log360-license">Параметры лицензирования:</label>
+                    <input type="range" id="log360-license" name="log360-license" min="1" max="3" value="1" class="license-slider">
+                    <span id="log360-license-value">1 год</span>
+                    <label for="log360-version">Выберите версию:</label>
+                    <select id="log360-version" name="log360-version">
+                        <option value="standard">Стандартная</option>
+                        <option value="professional">Профессиональная</option>
+                        <option value="enterprise">Корпоративная</option>
+                    </select>
+                    <div>
+                        <label><input type="checkbox" name="log360-support" value="support"> Поддержка</label>
+                        <label><input type="checkbox" name="log360-training" value="training"> Обучение</label>
+                    </div>
+                    <label for="log360-comments">Комментарии:</label>
+                    <textarea id="log360-comments" name="log360-comments" rows="3"></textarea>
                     <p>Цена: $900</p>
                     <button>Добавить в корзину</button>
                 </div>
                 <div class="product">
                     <h3>EventLog Analyzer</h3>
                     <p>Описание продукта EventLog Analyzer.</p>
-                    <p>Параметры лицензирования: 1 год, 3 года, 5 лет.</p>
+                    <label for="eventlog-license">Параметры лицензирования:</label>
+                    <input type="range" id="eventlog-license" name="eventlog-license" min="1" max="3" value="1" class="license-slider">
+                    <span id="eventlog-license-value">1 год</span>
+                    <label for="eventlog-version">Выберите версию:</label>
+                    <select id="eventlog-version" name="eventlog-version">
+                        <option value="standard">Стандартная</option>
+                        <option value="professional">Профессиональная</option>
+                        <option value="enterprise">Корпоративная</option>
+                    </select>
+                    <div>
+                        <label><input type="checkbox" name="eventlog-support" value="support"> Поддержка</label>
+                        <label><input type="checkbox" name="eventlog-training" value="training"> Обучение</label>
+                    </div>
+                    <label for="eventlog-comments">Комментарии:</label>
+                    <textarea id="eventlog-comments" name="eventlog-comments" rows="3"></textarea>
                     <p>Цена: $400</p>
                     <button>Добавить в корзину</button>
                 </div>
                 <div class="product">
                     <h3>Password Manager Pro</h3>
                     <p>Описание продукта Password Manager Pro.</p>
-                    <p>Параметры лицензирования: 1 год, 3 года, 5 лет.</p>
+                    <label for="pmp-license">Параметры лицензирования:</label>
+                    <input type="range" id="pmp-license" name="pmp-license" min="1" max="3" value="1" class="license-slider">
+                    <span id="pmp-license-value">1 год</span>
+                    <label for="pmp-version">Выберите версию:</label>
+                    <select id="pmp-version" name="pmp-version">
+                        <option value="standard">Стандартная</option>
+                        <option value="professional">Профессиональная</option>
+                        <option value="enterprise">Корпоративная</option>
+                    </select>
+                    <div>
+                        <label><input type="checkbox" name="pmp-support" value="support"> Поддержка</label>
+                        <label><input type="checkbox" name="pmp-training" value="training"> Обучение</label>
+                    </div>
+                    <label for="pmp-comments">Комментарии:</label>
+                    <textarea id="pmp-comments" name="pmp-comments" rows="3"></textarea>
                     <p>Цена: $500</p>
                     <button>Добавить в корзину</button>
                 </div>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Управление сетью - Интернет-магазин программного обеспечения</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/scripts.js" defer></script>
 </head>
 <body>
     <header>
@@ -25,21 +26,63 @@
                 <div class="product">
                     <h3>OpManager</h3>
                     <p>Описание продукта OpManager.</p>
-                    <p>Параметры лицензирования: 1 год, 3 года, 5 лет.</p>
+                    <label for="opmanager-license">Параметры лицензирования:</label>
+                    <input type="range" id="opmanager-license" name="opmanager-license" min="1" max="3" value="1" class="license-slider">
+                    <span id="opmanager-license-value">1 год</span>
+                    <label for="opmanager-version">Выберите версию:</label>
+                    <select id="opmanager-version" name="opmanager-version">
+                        <option value="standard">Стандартная</option>
+                        <option value="professional">Профессиональная</option>
+                        <option value="enterprise">Корпоративная</option>
+                    </select>
+                    <div>
+                        <label><input type="checkbox" name="opmanager-support" value="support"> Поддержка</label>
+                        <label><input type="checkbox" name="opmanager-training" value="training"> Обучение</label>
+                    </div>
+                    <label for="opmanager-comments">Комментарии:</label>
+                    <textarea id="opmanager-comments" name="opmanager-comments" rows="3"></textarea>
                     <p>Цена: $500</p>
                     <button>Добавить в корзину</button>
                 </div>
                 <div class="product">
                     <h3>NetFlow Analyzer</h3>
                     <p>Описание продукта NetFlow Analyzer.</p>
-                    <p>Параметры лицензирования: 1 год, 3 года, 5 лет.</p>
+                    <label for="netflow-license">Параметры лицензирования:</label>
+                    <input type="range" id="netflow-license" name="netflow-license" min="1" max="3" value="1" class="license-slider">
+                    <span id="netflow-license-value">1 год</span>
+                    <label for="netflow-version">Выберите версию:</label>
+                    <select id="netflow-version" name="netflow-version">
+                        <option value="standard">Стандартная</option>
+                        <option value="professional">Профессиональная</option>
+                        <option value="enterprise">Корпоративная</option>
+                    </select>
+                    <div>
+                        <label><input type="checkbox" name="netflow-support" value="support"> Поддержка</label>
+                        <label><input type="checkbox" name="netflow-training" value="training"> Обучение</label>
+                    </div>
+                    <label for="netflow-comments">Комментарии:</label>
+                    <textarea id="netflow-comments" name="netflow-comments" rows="3"></textarea>
                     <p>Цена: $400</p>
                     <button>Добавить в корзину</button>
                 </div>
                 <div class="product">
                     <h3>Network Configuration Manager</h3>
                     <p>Описание продукта Network Configuration Manager.</p>
-                    <p>Параметры лицензирования: 1 год, 3 года, 5 лет.</p>
+                    <label for="ncm-license">Параметры лицензирования:</label>
+                    <input type="range" id="ncm-license" name="ncm-license" min="1" max="3" value="1" class="license-slider">
+                    <span id="ncm-license-value">1 год</span>
+                    <label for="ncm-version">Выберите версию:</label>
+                    <select id="ncm-version" name="ncm-version">
+                        <option value="standard">Стандартная</option>
+                        <option value="professional">Профессиональная</option>
+                        <option value="enterprise">Корпоративная</option>
+                    </select>
+                    <div>
+                        <label><input type="checkbox" name="ncm-support" value="support"> Поддержка</label>
+                        <label><input type="checkbox" name="ncm-training" value="training"> Обучение</label>
+                    </div>
+                    <label for="ncm-comments">Комментарии:</label>
+                    <textarea id="ncm-comments" name="ncm-comments" rows="3"></textarea>
                     <p>Цена: $600</p>
                     <button>Добавить в корзину</button>
                 </div>

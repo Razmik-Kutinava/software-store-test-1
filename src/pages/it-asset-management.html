@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Управление ИТ-активами - Интернет-магазин программного обеспечения</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/scripts.js" defer></script>
 </head>
 <body>
     <header>
@@ -25,21 +26,63 @@
                 <div class="product">
                     <h3>AssetExplorer</h3>
                     <p>Описание продукта AssetExplorer.</p>
-                    <p>Параметры лицензирования: 1 год, 3 года, 5 лет.</p>
+                    <label for="assetexplorer-license">Параметры лицензирования:</label>
+                    <input type="range" id="assetexplorer-license" name="assetexplorer-license" min="1" max="3" value="1" class="license-slider">
+                    <span id="assetexplorer-license-value">1 год</span>
+                    <label for="assetexplorer-version">Выберите версию:</label>
+                    <select id="assetexplorer-version" name="assetexplorer-version">
+                        <option value="standard">Стандартная</option>
+                        <option value="professional">Профессиональная</option>
+                        <option value="enterprise">Корпоративная</option>
+                    </select>
+                    <div>
+                        <label><input type="checkbox" name="assetexplorer-support" value="support"> Поддержка</label>
+                        <label><input type="checkbox" name="assetexplorer-training" value="training"> Обучение</label>
+                    </div>
+                    <label for="assetexplorer-comments">Комментарии:</label>
+                    <textarea id="assetexplorer-comments" name="assetexplorer-comments" rows="3"></textarea>
                     <p>Цена: $500</p>
                     <button>Добавить в корзину</button>
                 </div>
                 <div class="product">
                     <h3>ServiceDesk Plus</h3>
                     <p>Описание продукта ServiceDesk Plus.</p>
-                    <p>Параметры лицензирования: 1 год, 3 года, 5 лет.</p>
+                    <label for="servicedesk-license">Параметры лицензирования:</label>
+                    <input type="range" id="servicedesk-license" name="servicedesk-license" min="1" max="3" value="1" class="license-slider">
+                    <span id="servicedesk-license-value">1 год</span>
+                    <label for="servicedesk-version">Выберите версию:</label>
+                    <select id="servicedesk-version" name="servicedesk-version">
+                        <option value="standard">Стандартная</option>
+                        <option value="professional">Профессиональная</option>
+                        <option value="enterprise">Корпоративная</option>
+                    </select>
+                    <div>
+                        <label><input type="checkbox" name="servicedesk-support" value="support"> Поддержка</label>
+                        <label><input type="checkbox" name="servicedesk-training" value="training"> Обучение</label>
+                    </div>
+                    <label for="servicedesk-comments">Комментарии:</label>
+                    <textarea id="servicedesk-comments" name="servicedesk-comments" rows="3"></textarea>
                     <p>Цена: $600</p>
                     <button>Добавить в корзину</button>
                 </div>
                 <div class="product">
                     <h3>Desktop Central</h3>
                     <p>Описание продукта Desktop Central.</p>
-                    <p>Параметры лицензирования: 1 год, 3 года, 5 лет.</p>
+                    <label for="desktopcentral-license">Параметры лицензирования:</label>
+                    <input type="range" id="desktopcentral-license" name="desktopcentral-license" min="1" max="3" value="1" class="license-slider">
+                    <span id="desktopcentral-license-value">1 год</span>
+                    <label for="desktopcentral-version">Выберите версию:</label>
+                    <select id="desktopcentral-version" name="desktopcentral-version">
+                        <option value="standard">Стандартная</option>
+                        <option value="professional">Профессиональная</option>
+                        <option value="enterprise">Корпоративная</option>
+                    </select>
+                    <div>
+                        <label><input type="checkbox" name="desktopcentral-support" value="support"> Поддержка</label>
+                        <label><input type="checkbox" name="desktopcentral-training" value="training"> Обучение</label>
+                    </div>
+                    <label for="desktopcentral-comments">Комментарии:</label>
+                    <textarea id="desktopcentral-comments" name="desktopcentral-comments" rows="3"></textarea>
                     <p>Цена: $700</p>
                     <button>Добавить в корзину</button>
                 </div>
