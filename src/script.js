@@ -23,4 +23,35 @@ document.addEventListener('DOMContentLoaded', () => {
             valueSpan.textContent = text;
         });
     });
+
+    updateCart();
 });
+
+function addToCart(productName, price) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ productName, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    window.location.href = 'cart.html';
+}
+
+function updateCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotalContainer = document.getElementById('cart-total');
+    let total = 0;
+
+    cartItemsContainer.innerHTML = '';
+    cart.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.textContent = `${item.productName} - $${item.price}`;
+        cartItemsContainer.appendChild(itemElement);
+        total += item.price;
+    });
+
+    cartTotalContainer.textContent = `Итого: $${total}`;
+}
+
+function proceedToCheckout() {
+    alert('Переход к оплате...');
+    // Здесь можно добавить логику для перехода к оплате
+}

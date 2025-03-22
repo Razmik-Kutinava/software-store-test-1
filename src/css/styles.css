@@ -118,3 +118,12 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+#cart-items {
+    margin: 20px 0;
+}
+
+#cart-total {
+    font-weight: bold;
+    margin: 20px 0;
+}

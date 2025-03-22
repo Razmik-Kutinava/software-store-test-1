@@ -15,6 +15,7 @@
                 <li><a href="../index.html">Главная</a></li>
                 <li><a href="about.html">О нас</a></li>
                 <li><a href="contact.html">Контакты</a></li>
+                <li><a href="cart.html">Корзина</a></li>
             </ul>
         </nav>
     </header>
@@ -42,7 +43,7 @@
                     <label for="log360-comments">Комментарии:</label>
                     <textarea id="log360-comments" name="log360-comments" rows="3"></textarea>
                     <p>Цена: $900</p>
-                    <button>Добавить в корзину</button>
+                    <button onclick="addToCart('Log360', 900)">Добавить в корзину</button>
                 </div>
                 <div class="product">
                     <h3>EventLog Analyzer</h3>
@@ -63,7 +64,7 @@
                     <label for="eventlog-comments">Комментарии:</label>
                     <textarea id="eventlog-comments" name="eventlog-comments" rows="3"></textarea>
                     <p>Цена: $400</p>
-                    <button>Добавить в корзину</button>
+                    <button onclick="addToCart('EventLog Analyzer', 400)">Добавить в корзину</button>
                 </div>
                 <div class="product">
                     <h3>Password Manager Pro</h3>
@@ -84,7 +85,7 @@
                     <label for="pmp-comments">Комментарии:</label>
                     <textarea id="pmp-comments" name="pmp-comments" rows="3"></textarea>
                     <p>Цена: $500</p>
-                    <button>Добавить в корзину</button>
+                    <button onclick="addToCart('Password Manager Pro', 500)">Добавить в корзину</button>
                 </div>
             </div>
         </section>
