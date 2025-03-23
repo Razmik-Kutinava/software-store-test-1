@@ -1,7 +1,6 @@
-/* filepath: c:\Tools\workarea\software-store\src\js\scripts.js */
 document.addEventListener('DOMContentLoaded', () => {
+    // Обработка слайдеров лицензии
     const licenseSliders = document.querySelectorAll('.license-slider');
-
     licenseSliders.forEach(slider => {
         slider.addEventListener('input', (event) => {
             const valueSpan = document.getElementById(`${event.target.id}-value`);
@@ -24,53 +23,64 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Изменение текста кнопок "Добавить в корзину"
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    addToCartButtons.forEach(button => {
+        button.textContent = 'Купить сейчас'; // Меняем текст кнопки
+    });
+
+    // Обработка кнопок "Добавить в корзину" (отправка данных)
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const productCard = button.closest('.product'); // Находим карточку товара
+            const productName = productCard.querySelector('h3').textContent; // Название товара
+            const price = parseFloat(productCard.querySelector('p').textContent.replace('Цена: $', '')); // Цена
+            const licenseDuration = productCard.querySelector('.license-slider + span').textContent; // Длительность лицензии
+            const version = productCard.querySelector('select').value; // Версия
+            const support = productCard.querySelector('input[type="checkbox"][value="support"]').checked ? 'Yes' : 'No'; // Поддержка
+            const training = productCard.querySelector('input[type="checkbox"][value="training"]').checked ? 'Yes' : 'No'; // Обучение
+            const comments = productCard.querySelector('textarea').value; // Комментарии
+
+            // Формируем объект с данными
+            const data = {
+                orderId: generateOrderId(),
+                productName,
+                price,
+                licenseDuration,
+                version,
+                support,
+                training,
+                comments
+            };
+
+            // Отправляем данные в Google Sheets
+            fetch('https://script.google.com/macros/s/AKfycbzzw1JmyZ7EGboaZ_Q22-_q-ChJr30BT5VRzaMJ0A_CAFZUUyCUL_bxgWcOzygeXspz/exec', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.status === 'success') {
+                    alert('Товар добавлен в корзину!');
+                } else {
+                    alert('Ошибка при добавлении товара в корзину.');
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+                alert('Ошибка при добавлении товара в корзину.');
+            });
+        });
+    });
+
+    // Обновление корзины (если страница корзины существует)
     if (document.getElementById('cart-items')) {
         updateCart();
     }
 });
-
-function addToCart(productName, price) {
-    const orderId = generateOrderId();
-    const licenseDuration = document.querySelector(`#${productName.toLowerCase().replace(/ /g, '-')}-license-value`).textContent;
-    const version = document.querySelector(`#${productName.toLowerCase().replace(/ /g, '-')}-version`).value;
-    const support = document.querySelector(`input[name="${productName.toLowerCase().replace(/ /g, '-')}-support"]`).checked ? 'Yes' : 'No';
-    const training = document.querySelector(`input[name="${productName.toLowerCase().replace(/ /g, '-')}-training"]`).checked ? 'Yes' : 'No';
-    const comments = document.querySelector(`#${productName.toLowerCase().replace(/ /g, '-')}-comments`).value;
-
-    const data = {
-        orderId,
-        productName,
-        price,
-        licenseDuration,
-        version,
-        support,
-        training,
-        comments
-    };
-
-    fetch('https://script.google.com/macros/s/AKfycbzzw1JmyZ7EGboaZ_Q22-_q-ChJr30BT5VRzaMJ0A_CAFZUUyCUL_bxgWcOzygeXspz/exec', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(response => response.json())
-    .then(result => {
-        if (result.status === 'success') {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.push(data);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            window.location.href = 'cart.html';
-        } else {
-            alert('Ошибка при добавлении товара в корзину.');
-        }
-    })
-    .catch(error => {
-        console.error('Ошибка:', error);
-        alert('Ошибка при добавлении товара в корзину.');
-    });
-}
 
 function updateCart() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -89,11 +99,16 @@ function updateCart() {
     cartTotalContainer.textContent = `Итого: $${total}`;
 }
 
-function proceedToCheckout() {
-    alert('Переход к оплате...');
-    // Здесь можно добавить логику для перехода к оплате
-}
-
 function generateOrderId() {
     return 'ORD-' + Math.random().toString(36).substr(2, 9).toUpperCase();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Находим все кнопки на странице
+    const allButtons = document.querySelectorAll('button');
+    
+    // Добавляем класс каждой кнопке
+    allButtons.forEach(button => {
+        button.classList.add('add-to-cart');
+    });
+});
